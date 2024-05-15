@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+	  <script src="https://cdn.unipaas.com/unipaas.sdk.js"></script>
+	  <link rel="stylesheet" href="https://cdn.unipaas.com/style.css">
+	  <!-- polyfills for IE11 users -->
+	  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+	<!--<div className="payment-field">
+		<label className="payment-field&#45;&#45;cardholder-label">
+			Cardholder name
+			<div className="secure-field&#45;&#45;container">
+				<div id="card"></div>
+			</div>
+		</label>
+	</div>-->
+    <script type="module" src="/src/main.tsx"></script>
+
+	<script>
+		/*var DOMReady = function(callback) {
+			document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback());
+		};
+		DOMReady(function() {
+
+		var unipaas = new Unipaas();
+
+		var SESSION_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudElkIjoiNjYzZGVlMmRjYmM0MzFkZWU4MmIyYWQxIiwibWVyY2hhbnROYW1lIjoiQWxleCIsImFtb3VudCI6NTAsImN1cnJlbmN5IjoiR0JQIiwiZW1haWwiOiJzZWZlZkBzZWZzZS5jb20iLCJjb3VudHJ5IjoiR0IiLCJzZWxsZXJJZCI6IjY2M2RlZTJkY2JjNDMxZGVlODJiMmFkMSIsInZlbmRvcklkIjoiNjYzZGVlMmRjYmM0MzFkZWU4MmIyYWQxIiwic2NvcGVzIjpbIndlYnNka19hY2Nlc3MiLCJkaXJlY3RfZGViaXRfcmVhZCJdLCJpc1JlY3VycmluZyI6ZmFsc2UsInBheW1lbnRMaW5rSWQiOiJSY2RIWFhxcl96IiwiaWF0IjoxNzE1MzUyODU0LCJleHAiOjE3MTU0MzkyNTR9.WeKoRs-q2IZ6gZU8I0bEROlHUxYwwpqKJt4M6PqzWN4';
+
+		// use polyfiils for IE11
+		unipaas.usePolyfills();
+
+		unipaas.initTokenize(
+				SESSION_TOKEN,
+				{
+					// single card details field:
+					cardDetails: {
+						selector: '#card',
+						placeholder: { cardNumber: "1234 5678 9012 3456", cvv: "CVV", expiry: "MM/YY" },
+					},
+
+					// OR: seperate card details field:
+					/!*cardNumber: {
+						selector: "#card-number",
+						placeholder: "1234 5678 9012 3456 12"
+					},
+					cvv: { selector: "#cvv-number", placeholder: "123" },
+					expiry: {
+						selector: "#expiry-date",
+						placeholder: "MM/YY"
+					},
+
+					// card holder field:
+					cardHolder: {
+						selector: "#holdername",
+						placeholder: "A. Einstein"
+					}*!/
+				},
+
+				// submit button field will be sent in the third argument as additional field
+				{
+					additionalFields: {
+						submitButton: {
+							selector: "#submit-form"
+						}
+					},
+
+
+					/!*paymentComponents: [ //for both GooglePay and Apple Pay - priotirize Apple Pay and render immediately on load
+						{type: "applePay", params: {selector: "#applepay_googlepay"}, priority: true, renderImmediately: true},
+						{type: "googlePay", params: {selector: "#applepay_googlepay"}, renderImmediately: true}
+					],*!/
+
+					mode: 'test' //possible values: live (production) or test(sandbox)
+				}
+		);
+
+
+		function disableButtonOnSuccess() {
+			var sendButton = window.document.getElementById('submit-form');
+			if (sendButton) {
+				sendButton.disabled = true;
+			}
+		}
+
+		unipaas.on('onSuccess', function (data) {
+			console.log('Success:', data);
+			disableButtonOnSuccess(true);
+		})
+		unipaas.on('onError', function (err) {
+			console.log('Error:', err);
+		})
+		});*/
+	</script>
+  </body>
+</html>
