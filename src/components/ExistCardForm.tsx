@@ -11,8 +11,6 @@ import {faCreditCard} from '@fortawesome/free-solid-svg-icons';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 import {faHashtag} from '@fortawesome/free-solid-svg-icons';
 
-import FormGroup from "../layouts/FormGroup.tsx";
-
 function ExistCardForm() {
 
 	const authState = useSelector((state: RootState) => state.auth);
@@ -22,7 +20,6 @@ function ExistCardForm() {
 	const dispatch = useDispatch();
 	const sessionToken = useSelector((state: RootState) => state.auth.sessionToken);
 	const paymentOptions = authState.paymentOptions;
-	console.log(paymentOptions)
 
 	useEffect(() => {
 		dispatch(fetchSessionToken(authState.consumerId) as any);
@@ -31,7 +28,6 @@ function ExistCardForm() {
 	]);
 
 	useEffect(() => {
-		console.log('sessionToken:', authState.sessionToken);
 		if (!authState.sessionToken) return;
 
 		unipaas = getUnipaasInstance();

@@ -34,8 +34,6 @@ const updateAuthorizationStatusForUser = async (email) => {
 		const results = await getAllAuthorizationsByUser(authorizationIds);
 		// Update authorization statuses in usersData
 		results.forEach((result, index) => {
-			console.log('user.authorizations[index].authorizationStatus --->', user.authorizations[index].authorizationStatus);
-			console.log('result.authorizationStatus --->', result.authorizationStatus);
 			if (user.authorizations[index].authorizationStatus !== result.authorizationStatus) {
 				user.authorizations[index].authorizationStatus = result.authorizationStatus;
 
@@ -57,7 +55,6 @@ const getAllAuthorizationsByUser = async (authorizationIds) => {
 const updateAuthorizationStatusesForAllUsers = () => {
 	console.log("Updating authorization statuses for all users...");
 	const userEmails = Object.keys(usersData);
-	console.log('userEmails --->', userEmails);
 	userEmails.forEach(userEmail => {
 		updateAuthorizationStatusForUser(userEmail);
 	});

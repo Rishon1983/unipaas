@@ -7,8 +7,6 @@ interface FormGroupProps {
 }
 
 function FormGroup(props: FormGroupProps) {
-	//const [count, setCount] = useState(0)
-
 	return (
 
 		<div className={`payment-field ${props.id}`}>

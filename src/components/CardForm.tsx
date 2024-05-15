@@ -25,7 +25,6 @@ function CardForm() {
 	]);
 
 	useEffect(() => {
-		console.log('sessionToken:', sessionToken);
 		if (!sessionToken) return;
 
 		const unipaas = getUnipaasInstance();
