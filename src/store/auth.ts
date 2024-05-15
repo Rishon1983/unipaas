@@ -18,6 +18,7 @@ export const getInitData = createAsyncThunk('auth/getInitData', async (_, {dispa
 		dispatch(authActions.setOrderId(response.data.orderId));
 		dispatch(authActions.setAmount(response.data.amount));
 		dispatch(authActions.setEmail(response.data.email));
+		dispatch(authActions.setAuthorizations(response.data.authorizations));
 
 		console.log('initData:', response.data);
 
@@ -76,6 +77,7 @@ const authInitState = {
 	consumerId: null,
 	email: '',
 	orderId: '',
+	authorizations: [],
 };
 const authSlice = createSlice({
 	name: 'auth',
@@ -98,6 +100,9 @@ const authSlice = createSlice({
 		},
 		setOrderId(state, action) {
 			state.orderId = action.payload;
+		},
+		setAuthorizations(state, action) {
+			state.authorizations = action.payload;
 		},
 	},
 });

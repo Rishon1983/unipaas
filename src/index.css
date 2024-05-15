@@ -221,6 +221,13 @@ button:focus-visible {
 			margin: 20px;
 		}
 	}
+
+	&.order-list {
+		ul {
+			height: 400px;
+			overflow: auto;
+		}
+	}
 }
 
 .popup-overlay {

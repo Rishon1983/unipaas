@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as crypto from "node:crypto";
 import {PRIVATE_KEY} from '../config/config.js';
-import {getPaymentOption, updateUsersData} from '../services/usersService.js';
+import {getAuthorizations, getPaymentOption, updateUsersData} from '../services/usersService.js';
 import {getConsumerId} from '../services/usersService.js';
 import {EMAIL} from '../config/config.js';
 
@@ -11,13 +11,15 @@ const getInitData = (req, res) => {
 	const orderId = crypto.randomBytes(16).toString("hex");
 	const consumerId = getConsumerId(EMAIL);
 	const paymentOptions = getPaymentOption(EMAIL);
+	const authorizations = getAuthorizations(EMAIL);
 
 	res.json({
 		amount,
 		consumerId,
 		paymentOptions,
 		orderId,
-		email: EMAIL
+		email: EMAIL,
+		authorizations: authorizations || []
 	});
 };
 
