@@ -26,7 +26,7 @@ export const getInitData = createAsyncThunk('auth/getInitData', async (_, {dispa
 		console.error(error);
 	}
 });
-export const fetchSessionToken = createAsyncThunk('auth/fetchSessionToken', async (_, thunkAPI) => {
+export const fetchSessionToken = createAsyncThunk('auth/fetchSessionToken', async (consumerId: any, thunkAPI) => {
 	const dispatch = thunkAPI.dispatch;
 	const authState = (thunkAPI.getState() as RootState).auth;
 	console.log('authState:', authState);
@@ -37,7 +37,7 @@ export const fetchSessionToken = createAsyncThunk('auth/fetchSessionToken', asyn
 			url: 'http://localhost:80/checkout',
 			headers: {accept: 'application/json', 'content-type': 'application/json'},
 			data: {
-				consumerId: authState.consumerId,
+				consumerId: consumerId,
 				orderId: authState.orderId,
 				amount: authState.amount,
 				email: authState.email,

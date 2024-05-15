@@ -25,7 +25,7 @@ function ExistCardForm() {
 	console.log(paymentOptions)
 
 	useEffect(() => {
-		dispatch(fetchSessionToken() as any);
+		dispatch(fetchSessionToken(authState.consumerId) as any);
 	}, [
 		dispatch
 	]);

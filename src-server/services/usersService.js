@@ -41,9 +41,20 @@ const getAuthorizations = (email) => {
 	return usersData[email]?.authorizations;
 };
 
+const addAuthorizations = (email, authorization) => {
+	if (!usersData[email]) {
+		usersData[email] = {};
+	}
+	if (!usersData[email].authorizations) {
+		usersData[email].authorizations = [];
+	}
+	usersData[email].authorizations.push(authorization);
+};
+
 export {
 	updateUsersData,
 	getConsumerId,
 	getPaymentOption,
-	getAuthorizations
+	getAuthorizations,
+	addAuthorizations
 };

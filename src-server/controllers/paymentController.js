@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as crypto from "node:crypto";
 import {PRIVATE_KEY} from '../config/config.js';
-import {getAuthorizations, getPaymentOption, updateUsersData} from '../services/usersService.js';
+import {addAuthorizations, getAuthorizations, getPaymentOption, updateUsersData} from '../services/usersService.js';
 import {getConsumerId} from '../services/usersService.js';
 import {EMAIL} from '../config/config.js';
 
@@ -83,6 +83,8 @@ const verifyAuthorization = async (req, res) => {
 		// only if req.body.saveCard is true
 		if (req.body && req.body.saveCard) {
 			updateUsersData(result);
+		} else {
+			addAuthorizations(EMAIL, result);
 		}
 
 	} catch (error) {

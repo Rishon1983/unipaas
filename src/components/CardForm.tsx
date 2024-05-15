@@ -19,7 +19,7 @@ function CardForm() {
 	const sessionToken = useSelector((state: RootState) => state.auth.sessionToken);
 
 	useEffect(() => {
-		dispatch(fetchSessionToken() as any);
+		dispatch(fetchSessionToken(null) as any);
 	}, [
 		dispatch
 	]);
