@@ -10,7 +10,7 @@ const updateUsersData = (data) => {
 	console.log('authorizationId --->', authorizationId);
 
 	if (usersData[EMAIL]) {
-		usersData[EMAIL].consumerId = data?.consumerId; // update consumerId
+		usersData[EMAIL].consumerId = consumerId; // update consumerId
 		usersData[EMAIL].paymentOption = data?.paymentOption; // update paymentOption
 		usersData[EMAIL].authorizations.push(authorizationId); // add authorizationId to authorizations
 	} else {
