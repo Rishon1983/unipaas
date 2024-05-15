@@ -13,13 +13,20 @@ function OrdersList() {
 	};
 	return (
 		<div className={'card-form-container order-list'}>
-			<div className={'title'}>Order List</div>
-			<FontAwesomeIcon icon={faUndo} onClick={handleBackButtonClick} title={'Return to main screen'} className={'back-icon'}/>
+			<div className={'title'}>Orders List</div>
+			<FontAwesomeIcon icon={faUndo} onClick={handleBackButtonClick} title={'Return to main screen'}
+							 className={'back-icon'}/>
 			<ul>
-				{authorizations.map((authorization: {authorizationId: string, authorizationStatus: string}) => (
+				{authorizations.map((authorization: { authorizationId: string, authorizationStatus: string }) => (
 					<li key={authorization.authorizationId}>
-						Authorization ID: {authorization.authorizationId}, Authorization
-						Status: {authorization.authorizationStatus}
+						<div className={'row'}>
+							<span className={'title'}>Authorization ID:</span>
+							<span className={'data'}>{authorization.authorizationId}</span>
+						</div>
+						<div className={'row'}>
+							<span className={'title'}>Status:</span>
+							<span className={'data'}>{authorization.authorizationStatus}</span>
+						</div>
 					</li>
 				))}
 			</ul>

@@ -226,6 +226,28 @@ button:focus-visible {
 		ul {
 			height: 400px;
 			overflow: auto;
+
+			li:nth-child(odd) {
+				background-color: #e7e7e7;
+			}
+
+			li:nth-child(even) {
+				background-color: white;
+			}
+
+			li {
+				.title {
+					/*font-style: italic;*/
+				}
+
+				.data {
+					font-weight: 400;
+				}
+
+				span {
+					padding: 0 5px;
+				}
+			}
 		}
 	}
 }
