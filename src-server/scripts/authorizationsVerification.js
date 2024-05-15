@@ -53,7 +53,6 @@ const getAllAuthorizationsByUser = async (authorizationIds) => {
 
 // Function to update authorization statuses for all users
 const updateAuthorizationStatusesForAllUsers = () => {
-	console.log("Updating authorization statuses for all users...");
 	const userEmails = Object.keys(usersData);
 	userEmails.forEach(userEmail => {
 		updateAuthorizationStatusForUser(userEmail);
